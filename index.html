@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Hello from Electron renderer!</title>
+  </head>
+  <body>
+    <h1>🐾 Your Virtual Pet 🐾</h1>
+    <p id="petName"></p>
+    <div id="pet-container">
+        <img id="pet" src="happy-pet.png" alt="Your Pet">
+    </div>
+    <h2>✅ Your To-Do List</h2>
+    <input type="text" id="new-task" placeholder="Add a task...">
+    <button id="taskAddBtn">Add</button>
+    <ul id="task-list"></ul>
+  </body>
+  <script src="./js/task.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./renderer.js"></script>
+</html>
