@@ -30,7 +30,9 @@ function AddTaskToHTMLList(newTask){
     const newListItem = document.createElement('li')
     const newListItemRemoveBtn = document.createElement('button')
     newListItem.innerText = newTask.task
+    newListItem.classList = "fs-5"
     newListItemRemoveBtn.innerText = "Complete"
+    newListItemRemoveBtn.classList = "btn btn-success m-2"
     newListItem.appendChild(newListItemRemoveBtn)
     taskList.appendChild(newListItem)
 
