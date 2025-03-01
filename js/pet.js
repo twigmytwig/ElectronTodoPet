@@ -6,7 +6,7 @@ function resizeCanvas() {
     canvas.width = window.innerWidth * 0.9; // 90% of window width
     canvas.height = 200; // Fixed height to avoid warping
 }
-window.addEventListener("resize", resizeCanvas);
+//window.addEventListener("resize", resizeCanvas);
 resizeCanvas(); // Call it initially
 
 ctx.imageSmoothingEnabled = false; // Keep the pixelated look
