@@ -11,6 +11,7 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+    <link rel="stylesheet" href="./css/progressBar.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <script src="./js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="./css/canvas.css"/>
@@ -36,9 +37,43 @@
         <canvas id="gameCanvas"></canvas>
       </div>
     </div>
+    <div class="row" id="petStatusHolder">
+      <div class="col-3">
+        <div class="d-flex align-items-center gap-2">
+            <span class="fw-bold">Health:</span>
+            <div class="progress w-50">
+                <div id="healthBar" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="d-flex align-items-center gap-2">
+            <span class="fw-bold">Happiness:</span>
+            <div class="progress w-50">
+                <div id="happinessBar" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="d-flex align-items-center gap-2">
+            <span class="fw-bold">Stress:</span>
+            <div class="progress w-50">
+                <div id="stressBar" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="d-flex align-items-center gap-2">
+            <span class="fw-bold">Training:</span>
+            <div class="progress w-50">
+                <div id="trainingBar" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+      </div>
+    </div>
     
     <h2 class="d-flex align-items-center justify-content-center">Your To-Do List</h2>
-    <div class="d-flex align-items-center justify-content-center gap-2">
+    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
       <input class="form-control w-50" type="text" id="new-task" placeholder="Add a task...">
       <button class="btn d-flex align-items-center p-0" id="taskAddBtn">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
@@ -48,8 +83,12 @@
       </button>
     </div>
     
-    <ul id="task-list"></ul>
+    <div id="task-list" class="row justify-content-center" >
+
+    </div>
+
   </body>
+  <script src="./js/petHealth.js"></script>
   <script src="./js/pet.js"></script>
   <script src="./js/task.js"></script>
   <script src="./js/app.js"></script>

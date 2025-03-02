@@ -27,19 +27,51 @@ function AddTask(taskString){
 function AddTaskToHTMLList(newTask){
     const taskList = document.getElementById("task-list")
 
-    const newListItem = document.createElement('li')
-    const newListItemRemoveBtn = document.createElement('button')
-    newListItem.innerText = newTask.task
-    newListItem.classList = "fs-5"
-    newListItemRemoveBtn.innerText = "Complete"
-    newListItemRemoveBtn.classList = "btn btn-success m-2"
-    newListItem.appendChild(newListItemRemoveBtn)
-    taskList.appendChild(newListItem)
+    const newCardItem = document.createElement('div')
+    newCardItem.classList = "card col-10 mb-2 mr-2 ms-2"
 
-    newListItemRemoveBtn.addEventListener('click', function(){
+    const innerCardDiv = document.createElement('div')
+    innerCardDiv.classList = "row p-2 d-flex align-items-center"
+
+    const newTaskCardBody = document.createElement("div")
+    newTaskCardBody.classList = "card-body"
+
+    const newTaskTitle = document.createElement("h5")
+    newTaskTitle.innerText = newTask.task
+    newTaskTitle.classList = "card-title col text-center"
+
+    const newTaskDateSubtitle = document.createElement("h6")
+    newTaskDateSubtitle.classList = "text-center  col card-subtitle mb-2 text-muted"
+    newTaskDateSubtitle.innerText = "1/01/1999" //PLACEHOLDER FOR NOW :)
+
+    const newTaskCardCompleteBtn = document.createElement('a')
+    newTaskCardCompleteBtn.innerText = "Mark Complete"
+    newTaskCardCompleteBtn.classList = "card-link col btn btn-outline-success mr-1"
+    newTaskCardCompleteBtn.addEventListener('click', function(){
         RemoveTask(newTask.id)
-        newListItem.remove()
+        newCardItem.remove()
     })
+
+    const newTaskCardAbandonBtn = document.createElement('a')
+    newTaskCardAbandonBtn.innerText = "Abandon"
+    newTaskCardAbandonBtn.classList = "card-link col btn btn-outline-danger"
+    newTaskCardAbandonBtn.addEventListener('click', function(){
+        RemoveTask(newTask.id)
+        newCardItem.remove()
+    })
+    newCardItem.appendChild(innerCardDiv)
+    innerCardDiv.appendChild(newTaskDateSubtitle)
+    innerCardDiv.appendChild(newTaskTitle)
+    
+    //innerCardDiv.appendChild(newTaskCardBody)
+    innerCardDiv.appendChild(newTaskCardCompleteBtn)
+    innerCardDiv.appendChild(newTaskCardAbandonBtn)
+    
+
+    taskList.appendChild(newCardItem)
+
+    const spacingCol = document.createElement('div')
+
 }
 
 const addTaskBtn = document.getElementById("taskAddBtn")
