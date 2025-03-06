@@ -1,11 +1,6 @@
 //initialization
-if(localStorage.getItem("petInfo") != undefined){
-    document.getElementById("petName").innerHTML = localStorage.getItem("petInfo")
-}
-else{
-    document.getElementById("petName").innerText = "No pet created!"
-    localStorage.setItem("petInfo", "ling-ling")
-}
+init()
+UpdateStatusBars()
 
 //adding click to initiate name change
 const nameChangeBtn = document.getElementById("changePetNameBtn")
@@ -29,3 +24,34 @@ nameSaveBtn.addEventListener('click', function(){
     nameInput.classList.add('d-none')
     nameSaveBtn.classList.add('d-none')
 })
+
+function UpdateStatusBars(){
+    updateHealth(localStorage.getItem("petHealth"))
+    updateHappiness(localStorage.getItem("petHappiness"))
+    updateStress(localStorage.getItem("petStress"))
+    updateTraining(localStorage.getItem("petTraining"))
+}
+
+function init(){
+    const test = localStorage.getItem("petStress")
+    if(localStorage.getItem("petInfo") != undefined){
+        document.getElementById("petName").innerHTML = localStorage.getItem("petInfo")
+    }
+    else{
+        document.getElementById("petName").innerText = "No pet created!"
+        localStorage.setItem("petInfo", "ling-ling")
+    }
+
+    if(localStorage.getItem("petHealth") === undefined || localStorage.getItem("petHealth") == null){
+        localStorage.setItem("petHealth", 100)
+    }
+    if(localStorage.getItem("petHappiness") === undefined || localStorage.getItem("petHappiness") == null){
+        localStorage.setItem("petHappiness", 100)
+    }
+    if(localStorage.getItem("petStress") === undefined || localStorage.getItem("petStress") == null){
+        localStorage.setItem("petStress", 100)
+    }
+    if(localStorage.getItem("petTraining") === undefined || localStorage.getItem("petTraining") == null){
+        localStorage.setItem("petTraining", 100)
+    }
+}

@@ -1,4 +1,7 @@
 function updateHealth(healthPercentage) {
+    if(healthPercentage > 100){
+        return;
+    }
     const healthBar = document.getElementById("healthBar");
     healthBar.style.width = healthPercentage + "%";
 
@@ -15,6 +18,9 @@ function updateHealth(healthPercentage) {
     }
 }
 function updateHappiness(percentage) {
+    if(percentage > 100){
+        return;
+    }
     const healthBar = document.getElementById("happinessBar");
     healthBar.style.width = percentage + "%";
 
@@ -31,6 +37,9 @@ function updateHappiness(percentage) {
     }
 }
 function updateStress(percentage) {
+    if(percentage > 100){
+        return;
+    }
     const healthBar = document.getElementById("stressBar");
     healthBar.style.width = percentage + "%";
 
@@ -48,6 +57,9 @@ function updateStress(percentage) {
 }
 
 function updateTraining(percentage) {
+    if(percentage > 100){
+        return;
+    }
     const healthBar = document.getElementById("trainingBar");
     healthBar.style.width = percentage + "%";
 
@@ -63,9 +75,3 @@ function updateTraining(percentage) {
         healthBar.classList.add("bg-danger");
     }
 }
-
-// Example: Set health to 50%
-updateHealth(80);
-updateHappiness(50);
-updateTraining(40);
-updateStress(20);

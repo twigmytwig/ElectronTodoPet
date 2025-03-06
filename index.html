@@ -87,6 +87,38 @@
 
     </div>
 
+     <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Popup Title</h5>
+                </div>
+                <div id="modalBody" class="modal-body">
+                    Choose an attribute to impact:
+                    <hr/>
+                    <div class="row">
+                      <div class="col">
+                        <input checked type="radio" name="stat" value="1">Health</input>
+                      </div>
+                      <div class="col">
+                        <input type="radio" name="stat" value="2">Happiness</input>
+                      </div>
+                      <div class="col">
+                        <input type="radio" name="stat" value="3">Stress</input>
+                      </div>
+                      <div class="col">
+                        <input type="radio" name="stat" value="4">Training</input>
+                      </div>
+                    </div>                   
+                </div>
+                <div class="modal-footer">
+                    <button id="saveChangesBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
   </body>
   <script src="./js/petHealth.js"></script>
   <script src="./js/pet.js"></script>
